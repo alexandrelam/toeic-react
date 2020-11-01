@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import "./style.css"
 
 export default function IndexPage() {
-  const [answer, setAnswer] = useState(JSON.parse(localStorage.getItem("answer")) || [])
-  const [index, setIndex] = useState(parseInt(localStorage.getItem("index")) || 1)
+  const windowGlobal = typeof window !== 'undefined' && window
+  const [answer, setAnswer] = useState(JSON.parse(windowGlobal.localStorage.getItem("answer")) || [])
+  const [index, setIndex] = useState(parseInt(windowGlobal.localStorage.getItem("index")) || 1)
   const letters = ["a", "b", "c", "d"]
 
   const handleAnswer = (letter) => {
@@ -41,8 +42,8 @@ export default function IndexPage() {
   }
 
   const save = () => {
-    localStorage.setItem("answer", JSON.stringify(answer))
-    localStorage.setItem("index", index)
+    windowGlobal.localStorage.setItem("answer", JSON.stringify(answer))
+    windowGlobal.localStorage.setItem("index", index)
   }
 
   return (
