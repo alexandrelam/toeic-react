@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/toeic`,
   siteMetadata: {
     title: `TOEIC !`,
     description: `Enregistre tes réponses de tes entraînements au toeic !`,
