@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Helmet } from "react-helmet"
 import "./style.css"
 
 export default function IndexPage() {
@@ -47,6 +48,9 @@ export default function IndexPage() {
 
   return (
     <div>
+      <Helmet>
+        <title>TOEIC !</title>
+      </Helmet>
       <div className="header">
         <h1>Question</h1>
         <input type="text" value={index} onChange={handleInput} />
